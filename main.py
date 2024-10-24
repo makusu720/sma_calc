@@ -61,8 +61,8 @@ def main(show_chart):
                          f"Current Closing Value: {current_close:.2f}\n"
                          f"Current SMA(200): {current_sma200:.2f}")
 
-    if current_sma200 < 200:
-        notification_body += f"\nAlert: SMA(200) is under 200!"
+    if current_sma200 < current_close:
+        notification_title = f"\nAlert: SMA(200) is under 200!"
 
     send_pushover_notification(notification_title, notification_body)
 
